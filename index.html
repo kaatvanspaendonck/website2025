@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title> home </title>
+
+  <link href="index.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+<div class="container_boven">
+
+<img  src="" alt=". . ." class="afb1" id="randomImage"> 
+
+
+</div>
+
+<div class="container_onder">
+
+  <div class="klik">
+    <a href="zz_artikelen.html" class="klik"> <p> > > KLIK </p> </a>
+ </div>
+
+ <div class="info">
+  <p> (06) 40916744 <br> <a href="mailto:kaatvanspaendonck@gmail.com" class="mailto">KAATVANSPAENDONCK@GMAIL.COM</a> </p>
+
+  </div>
+    
+
+    <div class="banner0"> <p> under construction . . . </p> </div> 
+</div>
+
+<script>
+  // Lijst met je afbeeldingen
+  const images = [
+    "images/afb1.jpg",
+    "images/afb2.jpg",
+    "images/afb3.jpg",
+    "images/afb4.jpg",
+    "images/afb5.jpg",
+    "images/afb6.jpg"
+  ];
+
+  const img = document.getElementById("randomImage");
+  let lastIndex = -1;
+
+  // Functie die een willekeurige afbeelding kiest
+  function showRandomImage() {
+    let randomIndex;
+    do {
+      randomIndex = Math.floor(Math.random() * images.length);
+    } while (randomIndex === lastIndex); // voorkomt dat je twee keer dezelfde krijgt
+    lastIndex = randomIndex;
+    img.src = images[randomIndex];
+  }
+
+  // Bij het laden van de pagina: toon een random afbeelding
+  window.addEventListener("load", showRandomImage);
+
+  // Als je erop klikt: verander naar een nieuwe random afbeelding
+  img.addEventListener("mouseover", showRandomImage);
+</script>
+
+
+
+</body>
+
+</html>
