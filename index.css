@@ -12,6 +12,8 @@ body, html {
   font-family: sjans;
   background-attachment: scroll;
   background-repeat: repeat-x;
+  /* background-color: rgb(218, 238, 232);
+  background-color: rgb(245, 245, 245);*/ 
   background-color: white;
   background-size: cover;
 }
@@ -23,6 +25,7 @@ height: 85vh;          /* volledige hoogte zodat afbeelding midden komt */
 display: flex;
 justify-content: center;
 align-items: center;
+border: 1px solid blue;
 }
 
 .afb1 {
@@ -44,8 +47,8 @@ a.klik {
 position: fixed;       /* blijft op dezelfde plek bij scrollen */
 left: 5%;              /* 5% vanaf linkerzijde */
 bottom: 5%;            /* 3% vanaf onderzijde */
-color: black;
-text-decoration: none;
+color:rebeccapurple;
+text-decoration:underline; 
 }
 
 a.klik:hover {
@@ -63,8 +66,8 @@ text-align: right;
 }
 
 a.mailto{
-  color:black;
-  text-decoration: none;
+  color:rebeccapurple;
+  text-decoration:underline; 
 }
 
 a.mailto:hover{
