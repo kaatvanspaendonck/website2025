@@ -3,135 +3,73 @@
 
 <head>
 
-  <title> index </title>
+  <title> home </title>
 
   <link href="index.css" rel="stylesheet" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
-
-<style>
-
-body, html {
-  height: 100%;
-  font-family: sjans;
-  background-attachment: scroll;
-  background-repeat: repeat-x;
-  background-color: white;
-  background-size: cover;
-}
-
-.eigennaam{
- display: block;
-  margin: 0 auto;
-  margin-top: 5%;
-}
-
-.menu{
-  margin-top: 2%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  font-style: italic;
-  gap: 10em;
-}
-
-.menu a {
-  text-decoration: none;
-  font-weight: 700;
-  font-style: italic;
-  color: rgb(207, 236, 121);
-  z-index: 10;
-}
-
-.mailto{
-  position: absolute;
-
-  margin-top: 10%;
-  left: 15%;
-  width: 20%;
-}
-
-
-.banner0{
-  
-  display: flex;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  color:darkmagenta; 
-  padding: 10px;
-  justify-content: center;
-  align-items: flex-end;
-  margin-bottom: 30%; 
-
-  animation: moveBanner 20s linear infinite; /*adjust as needed xx */
-  white-space: nowrap;
-
-  font-family: sjans;
-  font-style: italic;
-  font-weight: bold;
-
-}
-
-
-
-.instagram{
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2%;
-}
-
-
-</style>
-
 </head>
 
 
 <body>
 
-<img class="eigennaam" src="images/handwriting_kaatvanspaendonck.png" alt="eigennaam" width="30%"> 
+<div class="container_boven">
 
-<div class="menu">
-
-  <a href="index.html"> Home </a> 
-  <a href="Writing.html"> Writing </a>
-  <a href="Photography.html"> Photography </a>  
-
-</div>
-
-<div mailto> 
-
-<a href="mailto:kaatvanspaendonck@gmail.com" >
-  <img class="mailto" src="images/mail.png" alt="send me something via kaatvanspaendonck@gmail.com">
-</a>
-
-</div>
+<img  src="" alt=". . ." class="afb1" id="randomImage"> 
 
 
 </div>
+
+<div class="container_onder">
+
+  <div class="klik">
+    <a href="zz_artikelen.html" class="klik"> <p> > > klik </p> </a>
+ </div>
+
+ <div class="info">
+  <p> @kaatvspaendonck <br> <a href="mailto:kaatvanspaendonck@gmail.com" class="mailto">kaatvanspaendonck@gmail.com</a> </p>
+
+  </div>
+    
+
     <div class="banner0"> <p> under construction . . . </p> </div> 
 </div>
 
+<script>
+  // Lijst met je afbeeldingen
+  const images = [
+    "images/afb1.jpg",
+    "images/afb2.jpg",
+    "images/afb3.jpg",
+    "images/afb4.jpg",
+    "images/afb5.jpg",
+    "images/afb6.jpg"
+  ];
 
-<div instagram>
+  const img = document.getElementById("randomImage");
+  let lastIndex = -1;
 
-<a href="https://www.instagram.com/kaatvspaendonck/">
-  <img class="instagram" src="images/insta.png" alt="@kaatvspaendonck">
-</a>
+  // Functie die een willekeurige afbeelding kiest
+  function showRandomImage() {
+    let randomIndex;
+    do {
+      randomIndex = Math.floor(Math.random() * images.length);
+    } while (randomIndex === lastIndex); // voorkomt dat je twee keer dezelfde krijgt
+    lastIndex = randomIndex;
+    img.src = images[randomIndex];
+  }
 
-</div>
+  // Bij het laden van de pagina: toon een random afbeelding
+  window.addEventListener("load", showRandomImage);
+
+  // Als je erop klikt: verander naar een nieuwe random afbeelding
+  img.addEventListener("mouseover", showRandomImage);
+</script>
 
 
 
 </body>
-
-
-
-
 
 </html>
