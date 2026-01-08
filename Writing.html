@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <title> writing </title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+
+  <style>
+
+   @font-face {
+  font-family: 'sjans';
+  src: url(fonts/OpenSans_Condensed-Light\ copy.ttf) format('truetype');
+}
+
+  body, html {
+  height: 100%;
+  font-family: sjans;
+  background-attachment: scroll;
+  background-repeat: repeat-x;
+  background-color: white;
+  background-size: cover;
+}
+
+.eigennaam{
+ display: block;
+  margin: 0 auto;
+  margin-top: 5%;
+}
+
+.menu{
+  margin-top: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-style: italic;
+  gap: 10em;
+}
+
+.menu a{
+  text-decoration: none;
+  font-stule: bold;
+  font-style: italic;
+  color: rgb(183, 213, 93);
+
+}
+
+.artikels{
+  text-align: center;
+  margin-top: 5%;
+}
+
+.artikels a{
+  text-decoration: none;
+  color: black;
+  font-weight: 400;
+}
+
+.artikel p::before {
+  content: "* ";
+  visibility: hidden;
+}
+
+.artikel:hover p::before {
+  visibility: visible;
+}
+/* gekke dingesen */
+.paperclip {
+  position: absolute;   /* laat het los van de normale flow */
+  bottom: 20px;         /* 20px van onder */
+  left: 8%;           /* 20px van links */
+  width: 100px;         /* pas aan hoe groot je het wilt */
+  transform: rotate(-10deg); /* licht schuin voor 'rommelig' effect */
+  z-index: 1000;        /* zodat het boven andere dingen ligt */
+}
+
+.whatever{
+  position: absolute;
+  top: 30%;
+  left: 75%;
+  width: 220px;
+}
+
+@media (max-width: 768px) {
+  .whatever {
+    position: static;      /* terug in de normale flow */
+    display: block;
+    margin: 3rem auto 0;   /* onder de tekst, gecentreerd */
+    width: 180px;          /* iets kleiner op mobiel */
+  }
+}
+
+
+
+  </style>
+
+</head>
+
+
+<body>
+
+<img class="eigennaam" src="images/handwriting_kaatvanspaendonck.png" alt="eigennaam" width="30%"> 
+
+<div class="menu">
+
+  <a href="index.html"> Home </a> 
+  <a href="Writing.html"> Writing </a>
+  <a href="Photography.html"> Photography </a>  
+
+</div>
+
+
+<div class="artikels"> 
+
+    <a href="https://substack.com/inbox/post/182270560?r=6bt0ut&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true&triedRedirect=true"
+    class="artikel"> <p> From glitz to glory: when does the manicure become art? </p> </a>
+
+    <a href="https://www.volkskrant.nl/cultuur-media/ook-voor-vrouwen-geldt-als-je-moet-dan-moet-je-op-de-kermis-van-blaricum-bieden-vrouwenurinoirs-uitkomst~bd3b25b3/" 
+   class="artikel"> <p> Ook voor vrouwen geldt: als je moet, dan moet je. Op de kermis van Blaricum bieden vrouwenurinoirs uitkomst </p> </a>
+   
+    <a href="https://www.volkskrant.nl/muziek/de-amerikaanse-rapper-doechii-is-de-artiest-geworden-waar-ze-tien-jaar-geleden-op-youtube-van-droomde~bf580b98/"
+    class="artikel"> <p> De Amerikaanse rapper Doechii is de artiest geworden waar ze tien jaar geleden op YouTube van droomde </p></a>
+
+    <a href="https://www.volkskrant.nl/tentoonstellingen/is-het-mode-is-het-wapentuig-mysterieus-fotoarchief-van-het-amerikaanse-leger-nu-te-zien-in-rotterdamse-kunsthal~be7a79ab/"
+    class="artikel"> <p> Is het mode? Is het wapentuig? Mysterieus fotoarchief van het Amerikaanse leger nu te zien in Rotterdamse Kunsthal </p></a>
+
+    <a href="https://redpers.nl/schattige-laarsjes-voor-de-winter-een-verkapte-politieke-boodschap/"
+    class="artikel"> <p> Schattige laarsjes voor de winter: een verkapte politieke boodschap </p></a> 
+
+    <a href="https://redpers.nl/wat-zijn-nu-eigenlijk-de-risicos-van-nepnagels/"
+    class="artikel"> <p> Van lakjes van AliExpress tot een kaassouffle: wat zijn nu eigenlijk de risico's van nepnagels? </p></a>
+
+    <a href="https://redpers.nl/reality-tv-achter-de-schermen-eerlijk-of-gespeeld/"
+    class="artikel"> <p> Reality-tv achter de schermen: eerlijk of gespeeld? </p></a>
+
+</div>
+
+<div> 
+
+<img src="images/paperclip.gif" alt="paperclip" class="paperclip">
+<img src="images/omg.gif" alt="whatever" class="whatever">
+
+</div>
+
+</body>
+
+</html>
