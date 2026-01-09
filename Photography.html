@@ -4,8 +4,16 @@
   <title></title>
 
   <style>
+
+      @font-face {
+  font-family: 'sjans';
+  src: url(fonts/OpenSans_Condensed-Light.ttf) format('truetype');
+
+}
+
     body {
       background-image: url("images/achtergrond_web123.png");
+      font-family: sjans;
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
@@ -19,6 +27,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
     }
 
     .afb1 {
@@ -27,6 +36,30 @@
       object-fit: contain;
       cursor: pointer;
     }
+
+    #changeImageText {
+  display: none;
+  color: black;
+  font-family: 'sjans', sans-serif;
+  font-weight: 400;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+    /* Alleen echte mobiele apparaten */
+@media (pointer: coarse) and (max-width: 768px) {
+  body {
+    background-image: url("images/achtergrond_mobiel123.png");
+    background-size: cover;
+    background-position: center;
+  }
+
+  #changeImageText {
+    display: block;
+  }
+}
+
   </style>
 </head>
 
@@ -34,6 +67,8 @@
 
   <div class="container_boven">
     <img id="randomImage" class="afb1" alt="Random afbeelding">
+
+ <span id="changeImageText"> > next > </span>
   </div>
 
   <script>
@@ -52,21 +87,33 @@
 
     ];
 
-    const img = document.getElementById("randomImage");
-    let lastIndex = -1;
+  const img = document.getElementById("randomImage");
+  const text = document.getElementById("changeImageText");
+  let lastIndex = -1;
 
-    function showRandomImage() {
-      let randomIndex;
-      do {
-        randomIndex = Math.floor(Math.random() * images.length);
-      } while (randomIndex === lastIndex);
+  function showRandomImage() {
+    let randomIndex;
+    do {
+      randomIndex = Math.floor(Math.random() * images.length);
+    } while (randomIndex === lastIndex);
 
-      lastIndex = randomIndex;
-      img.src = images[randomIndex];
-    }
+    lastIndex = randomIndex;
+    img.src = images[randomIndex];
+  }
 
-    window.addEventListener("load", showRandomImage);
+  window.addEventListener("load", showRandomImage);
+
+  // Desktop: hover
+  if (window.matchMedia("(hover: hover)").matches) {
     img.addEventListener("mouseover", showRandomImage);
+  }
+
+  // Mobiel: knop
+  if (text) {
+  text.addEventListener("click", showRandomImage);
+  }
+
+   
   </script>
 
 </body>

@@ -50,6 +50,19 @@ body, html {
   z-index: 10;
 }
 
+@media (pointer: coarse) and (max-width: 768px)  {
+   .menu { 
+    flex-direction: column; /* van horizontaal naar verticaal */
+    gap: 1em; /* kleinere ruimte tussen links */
+    align-items: flex-end; /* optioneel: links uitlijnen */
+    margin-top: 5%; /* iets meer ruimte boven menu */} 
+ 
+   .menu a {
+    display: block; /* zodat elke link een aparte regel krijgt */
+    font-size: 18px; /* eventueel groter voor mobiel */
+  }
+  }
+
 .mailto{
   position: absolute;
 
@@ -83,6 +96,7 @@ body, html {
 @keyframes scroll {
   0%   { transform: translateX(100%); }
   100% { transform: translateX(-100%); }
+}
 
 
 .instagram{
