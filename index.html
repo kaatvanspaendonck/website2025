@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 
@@ -12,36 +14,31 @@
 
 
 <style>
-
-body, html {
-  height: 100%;
-  font-family: sjans;
-  background-attachment: scroll;
-  background-repeat: repeat-x;
-  background-color: white;
-  background-size: cover;
-}
-
-@font-face {
+    @font-face {
   font-family: 'sjans';
   src: url(fonts/OpenSans_Condensed-Light.ttf) format('truetype');
 
 }
 
-.eigennaam{
- display: block;
-  margin: 0 auto;
-  margin-top: 5%;
-}
+    body {
+      background-image: url("images/achtergrond_web123.png");
+      font-family: sjans;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      min-height: 100vh;
+    }
 
-.menu{
-  margin-top: 2%;
+    .menu{
+  position: absolute;
+  top: 5%;
+  right: 5%;
+
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  font-weight: bold;
-  font-style: italic;
-  gap: 10em;
+  gap: 1.5em;
 }
 
 .menu a {
@@ -53,130 +50,106 @@ body, html {
 }
 
 
-.banner {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  color: darkmagenta;
-  font-weight: bold;
-  font-style: italic;
-  white-space: nowrap;
-  overflow: hidden;
-  animation: scroll 20s linear infinite;
-  z-index: 10;
-  margin-bottom: 30%;
-}
+    .container_boven {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
 
-@keyframes scroll {
-  0%   { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
-}
+    .afb1 {
+      max-width: 40vw;
+      max-height: 50vh;
+      object-fit: contain;
+      cursor: pointer;
+    }
 
-
-.contact {
-  position: fixed;
-  bottom: 10%;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 20%; 
-}
-
-.contact-link{
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-
-.contact .icon {
-  width: 200px;     
-}
-
-.contact a{
-  text-decoration: none;
-}
-
-.pijltje{
-  font-size: 1rem;
+    #changeImageText {
+  display: none;
   color: black;
+  font-family: 'sjans', sans-serif;
+  font-weight: 400;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 18px;
 }
 
-@media (max-width: 768px)  {
-   .menu { 
-    position: relative;
-    top: auto;
-    flex-direction: column; 
-    gap: 1em; 
-    align-items: flex-end; 
-    margin-top: 5%;
-  } 
- 
-   .menu a {
-    display: block; 
-    font-size: 18px;
+    /* Alleen echte mobiele apparaten */
+@media (max-width: 768px) {
+  body {
+    background-image: url("images/achtergrond_mobiel123.png");
+    background-size: cover;
+    background-position: center;
   }
 
-   .contact {
-    position: relative;             
-    bottom: auto;
-    left: auto;
-    right: auto;                
-    display: flex;
-    flex-direction: column;
-    align-items: center;        
-    gap: 40px;   
-    margin-top: 80px;       
+  #changeImageText {
+    display: block;
   }
+}
 
-  .contact .icon {
-    width: 200px;   
-    height: auto;
-  }
-  }
-
-
-</style>
-
+  </style>
 </head>
-
 
 <body>
 
-<img class="eigennaam" src="images/handwriting_kaatvanspaendonck.png" alt="eigennaam" width="30%"> 
-
 <div class="menu">
 
-  <a href="index.html"> Home </a> 
-  <a href="Writing.html"> Writing </a>
-  <a href="Photography.html"> Photography </a>  
+  <a href="Writing.html"> > Writing </a>
+  <a href="Contact.html"> > Contact </a> 
 
 </div>
 
-</div>
-    <div class="banner"> <p> under construction . . . </p> </div> 
-</div>
+  <div class="container_boven">
+    <img id="randomImage" class="afb1" alt="Random afbeelding">
 
+ <span id="changeImageText"> > next > </span>
+  </div>
 
-<div class="contact"> 
-  <a href="mailto:kaatvanspaendonck@gmail.com" class="contact-link">
-    <span class="pijltje">></span>
-    <img class="icon mailto" src="images/mail.png" alt="kaatvanspaendonck@gmail.com">
-  </a>
+  <script>
+    const images = [
+      "images/afb4.jpg",
+      "images/afb1.jpg",
+      "images/kim1.jpg",
+      "images/kim2.jpg",
+      "images/krant1.jpeg",
+      "images/krant2.jpeg",
+      "images/afb7.jpg",
+      "images/afb8.jpg",
+      "images/afb3.jpg",
+      "images/afb6.jpg",
+      "images/afb2.jpg",
+     "images/afb5.jpg",
+    ];
 
-  <a href="https://www.instagram.com/kaatvspaendonck/" class="contact-link">
-     <span class="pijltje">></span>
-    <img class="icon instagram" src="images/ig2.jpg" alt="@kaatvspaendonck">
-  </a>
-</div>
+  const img = document.getElementById("randomImage");
+  const text = document.getElementById("changeImageText");
+  let currentIndex = 0;
 
+ function showNextImage() {
+  img.src = images[currentIndex];
+  currentIndex++;
 
+  if (currentIndex >= images.length) {
+    currentIndex = 0;
+  }
+}
+
+  window.addEventListener("load", showNextImage);
+
+  // Desktop: hover
+  if (window.matchMedia("(hover: hover)").matches) {
+  img.addEventListener("mouseover", showNextImage);
+}
+
+  // Mobiel: knop
+  if (text) {
+  text.addEventListener("click", showNextImage);
+}
+
+   
+  </script>
 
 </body>
-
-
-
-
-
 </html>
-
