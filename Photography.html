@@ -24,6 +24,26 @@
       min-height: 100vh;
     }
 
+    .menu{
+  position: absolute;
+  top: 5%;
+  right: 5%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5em;
+}
+
+.menu a {
+  text-decoration: none;
+  font-weight: 700;
+  font-style: italic;
+  color: black; 
+  z-index: 10;
+}
+
+
     .container_boven {
       width: 100%;
       height: 100vh;
@@ -68,6 +88,13 @@
 
 <body>
 
+<div class="menu">
+
+  <a href="index.html"> > Home </a> 
+  <a href="Writing.html"> > Writing </a>
+
+</div>
+
   <div class="container_boven">
     <img id="randomImage" class="afb1" alt="Random afbeelding">
 
@@ -76,45 +103,44 @@
 
   <script>
     const images = [
-      "images/afb1.jpg",
-      "images/afb2.jpg",
-      "images/afb3.jpg",
       "images/afb4.jpg",
-      "images/afb5.jpg",
-      "images/afb6.jpg",
-      "images/krant1.jpeg",
-      "images/krant2.jpeg",
+      "images/afb1.jpg",
       "images/kim1.jpg",
       "images/kim2.jpg",
-      "images/afb7.jpg"
-
+      "images/krant1.jpeg",
+      "images/krant2.jpeg",
+      "images/afb7.jpg",
+      "images/afb8.jpg",
+      "images/afb3.jpg",
+      "images/afb6.jpg",
+      "images/afb2.jpg",
+     "images/afb5.jpg",
     ];
 
   const img = document.getElementById("randomImage");
   const text = document.getElementById("changeImageText");
-  let lastIndex = -1;
+  let currentIndex = 0;
 
-  function showRandomImage() {
-    let randomIndex;
-    do {
-      randomIndex = Math.floor(Math.random() * images.length);
-    } while (randomIndex === lastIndex);
+ function showNextImage() {
+  img.src = images[currentIndex];
+  currentIndex++;
 
-    lastIndex = randomIndex;
-    img.src = images[randomIndex];
+  if (currentIndex >= images.length) {
+    currentIndex = 0;
   }
+}
 
-  window.addEventListener("load", showRandomImage);
+  window.addEventListener("load", showNextImage);
 
   // Desktop: hover
   if (window.matchMedia("(hover: hover)").matches) {
-    img.addEventListener("mouseover", showRandomImage);
-  }
+  img.addEventListener("mouseover", showNextImage);
+}
 
   // Mobiel: knop
   if (text) {
-  text.addEventListener("click", showRandomImage);
-  }
+  text.addEventListener("click", showNextImage);
+}
 
    
   </script>

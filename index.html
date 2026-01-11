@@ -48,38 +48,10 @@ body, html {
   text-decoration: none;
   font-weight: 700;
   font-style: italic;
-  color: rgb(207, 236, 121);
+  color: black; 
   z-index: 10;
 }
 
-@media (max-width: 768px)  {
-   .menu { 
-    flex-direction: column; /* van horizontaal naar verticaal */
-    gap: 1em; /* kleinere ruimte tussen links */
-    align-items: flex-end; /* optioneel: links uitlijnen */
-    margin-top: 5%; /* iets meer ruimte boven menu */} 
- 
-   .menu a {
-    display: block; /* zodat elke link een aparte regel krijgt */
-    font-size: 18px; /* eventueel groter voor mobiel */
-  }
-  }
-
-.mailto{
-  position: absolute;
-
-  margin-top: 10%;
-  left: 15%;
-  width: 20%;
-}
-
-.instagram{
-  position: fixed;
-  width: 2%;
-  left: 50%;
-  transform: translateX(-50%); 
-  bottom: 20px;
-}
 
 .banner {
   position: fixed;
@@ -92,7 +64,7 @@ body, html {
   overflow: hidden;
   animation: scroll 20s linear infinite;
   z-index: 10;
-  margin-bottom: 10%;
+  margin-bottom: 30%;
 }
 
 @keyframes scroll {
@@ -101,13 +73,67 @@ body, html {
 }
 
 
-.instagram{
+.contact {
   position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2%;
+  bottom: 10%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20%; 
 }
+
+.contact-link{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.contact .icon {
+  width: 200px;     
+}
+
+.contact a{
+  text-decoration: none;
+}
+
+.pijltje{
+  font-size: 1rem;
+  color: black;
+}
+
+@media (max-width: 768px)  {
+   .menu { 
+    position: relative;
+    top: auto;
+    flex-direction: column; 
+    gap: 1em; 
+    align-items: flex-end; 
+    margin-top: 5%;
+  } 
+ 
+   .menu a {
+    display: block; 
+    font-size: 18px;
+  }
+
+   .contact {
+    position: relative;             
+    bottom: auto;
+    left: auto;
+    right: auto;                
+    display: flex;
+    flex-direction: column;
+    align-items: center;        
+    gap: 40px;   
+    margin-top: 80px;       
+  }
+
+  .contact .icon {
+    width: 200px;   
+    height: auto;
+  }
+  }
 
 
 </style>
@@ -127,25 +153,24 @@ body, html {
 
 </div>
 
-<div mailto> 
-
-<a href="mailto:kaatvanspaendonck@gmail.com" >
-  <img class="mailto" src="images/mail.png" alt="send me something via kaatvanspaendonck@gmail.com">
-</a>
-
-</div>
-
-
 </div>
     <div class="banner"> <p> under construction . . . </p> </div> 
 </div>
 
 
-<div instagram>
+<div class="contact"> 
+  <a href="mailto:kaatvanspaendonck@gmail.com" class="contact-link">
+    <span class="pijltje">></span>
+    <img class="icon mailto" src="images/mail.png" alt="kaatvanspaendonck@gmail.com">
+  </a>
 
-<a href="https://www.instagram.com/kaatvspaendonck/">
-  <img class="instagram" src="images/insta.png" alt="@kaatvspaendonck">
-</a>
+  <a href="https://www.instagram.com/kaatvspaendonck/" class="contact-link">
+     <span class="pijltje">></span>
+    <img class="icon instagram" src="images/ig2.jpg" alt="@kaatvspaendonck">
+  </a>
+</div>
+
+
 
 </body>
 
@@ -154,4 +179,4 @@ body, html {
 
 
 </html>
-<!-- test commit -->
+
