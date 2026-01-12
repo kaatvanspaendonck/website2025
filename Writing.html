@@ -52,23 +52,6 @@
   z-index: 10;
 }
 
- /* Ander menu op alléén echte mobiele apparaten */
-
-@media (max-width: 768px)  {
-   .menu { 
-    flex-direction: column; /* van horizontaal naar verticaal */
-    gap: 1em; /* kleinere ruimte tussen links */
-    align-items: flex-end; /* optioneel: links uitlijnen */
-    margin-top: 5%; /* iets meer ruimte boven menu */} 
- 
-   .menu a {
-    display: block; /* zodat elke link een aparte regel krijgt */
-    font-size: 18px; /* eventueel groter voor mobiel */
-  }
-  }
-
-
-
 .artikels{
   text-align: center;
   margin-top: 5%;
@@ -106,20 +89,39 @@
 }
 
 @media (max-width: 768px) {
+  
+   .eigennaam{
+  width: 60%;
+  height: auto;
+  display: block;
+  }
+
+  .menu { 
+    flex-direction: column; 
+    gap: 1em;
+    align-items: flex-end; 
+    margin-top: 5%; 
+    margin-right: 2%;
+  } 
+ 
+   .menu a {
+    display: block; 
+    font-size: 18px; 
+  }
+  
   .whatever {
     position: static;      /* terug in de normale flow */
     display: block;
-    margin: 3rem auto 0;   /* onder de tekst, gecentreerd */
-    width: 180px;          /* iets kleiner op mobiel */
+    margin: 3rem auto 0;   
+    width: 180px;         
+    bottom: 1%;
   }
-}
 
-@media (max-width: 768px) {
   .paperclip {
-    width: 60px;        /* kleiner op mobiel */
-    bottom: 10px;       /* dichter bij onderkant scherm */
-    left: 5%;           /* helemaal links */
-    transform: rotate(-10deg); /* blijft schuin */
+    width: 60px;       
+    bottom: 10px;       
+    left: 5%;           
+    transform: rotate(-10deg); 
   }
 }
 
