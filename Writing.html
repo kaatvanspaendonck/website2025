@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+ <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title> writing </title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+
+  <style>
+
+@font-face {
+  font-family: 'sjans';
+  src: url(fonts/OpenSans_Condensed-Light.ttf) format('truetype');
+
+}
+
+  body, html {
+  background-image: url(images/achtergrond-web-4.jpg);
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% auto; 
+
+  font-family: sjans;
+  font-size: 16px;
+  line-height: 40px;
+
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  background: url("images/achtergrond-web-4.jpg") no-repeat center center;
+  background-size: cover;
+
+  opacity: 0.8;
+  z-index: -1;
+}
+
+.menu{
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  height: 40px;
+  background: rgb(250, 246, 240);
+}
+
+
+.menu a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+
+  color: navy;
+  font-weight: 500;
+
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+.menu a:nth-child(2) {
+  flex: 2;
+  background: rgb(150, 150, 179);
+  color: whitesmoke;
+}
+
+.menu a:nth-child(1),
+.menu a:nth-child(3) {
+  flex: 1;
+}
+
+.menu a:hover{
+  color: rgb(82, 2, 33);
+}
+
+.menu a {
+  border-right: 1px solid rgba(0,0,0,0.1);
+}
+
+.menu a:last-child {
+  border-right: none;
+}
+
+.artikels{
+  text-align: left;
+  margin-top: 250px;
+  margin-left: 25%;
+}
+
+.artikels a{
+  text-decoration: none;
+  color: black;
+  font-weight: 400;
+}
+
+.artikel p::before {
+  content: "* ";
+  visibility: hidden;
+}
+
+.artikel:hover p::before {
+  visibility: visible;
+}
+
+
+/* gekke dingesen */
+.paperclip {
+  position: absolute;   /* laat het los van de normale flow */
+  bottom: 20px;         /* 20px van onder */
+  left: 8%;           /* 20px van links */
+  width: 100px;         /* pas aan hoe groot je het wilt */
+  transform: rotate(-10deg); /* licht schuin voor 'rommelig' effect */
+  z-index: 1000;        /* zodat het boven andere dingen ligt */
+}
+
+.whatever{
+  position: absolute;
+  top: 70%;
+  left: 75%;
+  width: 220px;
+}
+
+@media (max-width: 768px) {
+
+  .menu { 
+    flex-direction: column; 
+    gap: 1em;
+    align-items: flex-end; 
+    margin-top: 5%; 
+    margin-right: 2%;
+  } 
+ 
+   .menu a {
+    display: block; 
+    font-size: 18px; 
+  }
+  
+  .whatever {
+    position: static;      /* terug in de normale flow */
+    display: block;
+    margin: 3rem auto 0;   
+    width: 180px;         
+    bottom: 1%;
+  }
+
+  .paperclip {
+    width: 60px;       
+    bottom: 10px;       
+    left: 5%;           
+    transform: rotate(-10deg); 
+  }
+}
+
+  </style>
+
+</head>
+
+
+<body>
+
+<!-- <img class="eigennaam" src="images/handwriting_kaatvanspaendonck.png" alt="eigennaam" width="30%"> -->
+
+<div class="menu">
+
+  <a href="index.html"> photography </a>  
+  <a href="www.eenbeetjenaief.nl"> www.eenbeetjenaief.nl </a>
+  <a href="Contact.html"> contact </a> 
+
+</div>
+
+
+<div class="artikels"> 
+
+    <a href="https://substack.com/inbox/post/182270560?r=6bt0ut&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true&triedRedirect=true"
+    class="artikel"> <p> From glitz to glory: when does the manicure become art? (VICE) </p> </a>
+
+    <a href="https://www.volkskrant.nl/cultuur-media/ook-voor-vrouwen-geldt-als-je-moet-dan-moet-je-op-de-kermis-van-blaricum-bieden-vrouwenurinoirs-uitkomst~bd3b25b3/" 
+   class="artikel"> <p> Ook voor vrouwen geldt: als je moet, dan moet je. Op de kermis van Blaricum bieden vrouwenurinoirs uitkomst (de Volkskrant) </p> </a>
+   
+    <a href="https://www.volkskrant.nl/muziek/de-amerikaanse-rapper-doechii-is-de-artiest-geworden-waar-ze-tien-jaar-geleden-op-youtube-van-droomde~bf580b98/"
+    class="artikel"> <p> De Amerikaanse rapper Doechii is de artiest geworden waar ze tien jaar geleden op YouTube van droomde (de Volkskrant) </p></a>
+
+    <a href="https://www.volkskrant.nl/tentoonstellingen/is-het-mode-is-het-wapentuig-mysterieus-fotoarchief-van-het-amerikaanse-leger-nu-te-zien-in-rotterdamse-kunsthal~be7a79ab/"
+    class="artikel"> <p> Is het mode? Is het wapentuig? Mysterieus fotoarchief van het Amerikaanse leger nu te zien in Rotterdamse Kunsthal (de Volkskrant) </p></a>
+
+    <a href="https://redpers.nl/schattige-laarsjes-voor-de-winter-een-verkapte-politieke-boodschap/"
+        class="artikel"> <p> Schattige laarsjes voor de winter: een verkapte politieke boodschap? (RedPers) </p> </a>
+
+    <a href="https://redpers.nl/wat-zijn-nu-eigenlijk-de-risicos-van-nepnagels/"
+    class="artikel"> <p> Van lakjes van AliExpress tot een kaassouffle: wat zijn nu eigenlijk de risico's van nepnagels? (RedPers) </p> </a>
+
+    <a href="https://redpers.nl/reality-tv-achter-de-schermen-eerlijk-of-gespeeld/"
+    class="artikel"> <p> Reality-tv achter de schermen: eerlijk of gespeeld? (RedPers) </p></a>
+
+</div>
+
+<div> 
+
+<!-- <img src="images/paperclip.gif" alt="paperclip" class="paperclip"> -->
+<img src="images/omg.gif" alt="whatever" class="whatever">
+
+</div>
+
+
+
+</body>
+
+</html>

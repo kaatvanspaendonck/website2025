@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+ <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title></title>
+
+  <style>
+
+  body, html {
+  height: 100%;
+  font-family: sjans;
+  background-attachment: scroll;
+  background-repeat: repeat-x;
+  background-color: white;
+  background-size: cover;
+}
+
+@font-face {
+  font-family: 'sjans';
+  src: url(fonts/OpenSans_Condensed-Light.ttf) format('truetype');
+
+}
+
+  .achtergrond-video {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.4;
+  }
+
+.contactgegevens{
+  text-align: right;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+
+  }
+
+.menu{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  height: 40px;
+  background: rgb(250, 246, 240);
+}
+
+
+.menu a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+
+  color: navy;
+  font-weight: 500;
+
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+.menu a:nth-child(2) {
+  flex: 2;
+  background: rgb(150, 150, 179);
+  color: whitesmoke;
+}
+
+.menu a:nth-child(1),
+.menu a:nth-child(3) {
+  flex: 1;
+}
+
+.menu a:hover{
+  color: rgb(82, 2, 33);
+}
+
+.menu a {
+  border-right: 1px solid rgba(0,0,0,0.1);
+}
+
+.menu a:last-child {
+  border-right: none;
+}
+
+.banner {
+  position: fixed;
+  width: 100%;
+  color: rgb(82, 2, 33);
+  font-style: italic;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: scroll 30s linear infinite;
+  z-index: 10;
+  bottom: 50px;
+}
+
+@keyframes scroll {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+
+.contact {
+  position: fixed;
+  bottom: 30%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20%; 
+}
+
+.contact-link{
+  display: flex;
+  align-items:center;
+  gap: 2rem;
+  padding: 5px;
+}
+
+.contact-link:hover {
+  border: 1px solid rgb(82, 2, 33);
+}
+
+.pijltje{
+  font-size: 1rem;
+  color: black;
+  margin-top: 10px;
+}
+
+.contact .icon {
+  width: 200px;  
+  display: block;   
+}
+
+.contact a{
+  text-decoration: none;
+}
+
+@media (max-width: 768px)  {
+
+  .eigennaam{
+  width: 60%;
+  height: auto;
+  display: block;
+  }
+
+   .menu { 
+    position: relative;
+    top: auto;
+    flex-direction: column; 
+    gap: 1em; 
+    align-items: flex-end; 
+    margin-top: 5%;
+    margin-right: 2%;
+  } 
+ 
+   .menu a {
+    display: block; 
+    font-size: 18px;
+  }
+
+   .contact {
+    position: relative;             
+    bottom: auto;
+    left: auto;
+    right: auto;                
+    display: flex;
+    flex-direction: column;
+    align-items: center;        
+    gap: 40px;   
+    margin-top: 80px;       
+  }
+
+  .contact .icon {
+    width: 200px;   
+    height: auto;
+  }
+  }
+
+
+</style>
+
+</head>
+
+
+<body>
+
+<video autoplay muted class="achtergrond-video" id="bgVideo">
+              <source src="images/IMG_7293-3.mov" type="video/mp4">
+            </video>
+
+<div class="contactgegevens">
+  I am a visual artist working with writing, photography, video, 
+  <br> installation, and increasingly webdesign. I have a background 
+  <br> in philosophy and journalism.
+  <br>
+  <br>
+  <br>
+       kaatvanspaendonck@gmail.com
+  <br> @kaatvspaendonck
+
+
+</div>
+
+<div class="menu">
+
+  <a href="index.html"> photography </a>  
+  <a href="www.eenbeetjenaief.nl"> www.eenbeetjenaief.nl </a>
+  <a href="Writing.html"> writing </a> 
+
+</div>
+
+</div>
+    <div class="banner"> <p> this website is under construction . . . </p> </div> 
+</div>
+
+<div class="contact"> 
+
+  <a href="mailto:kaatvanspaendonck@gmail.com" class="contact-link"> 
+    <span class="pijltje">></span> 
+     <img class="icon mailto" src="images/mail.png" alt="kaatvanspaendonck@gmail.com"> </a>
+
+  <a href="https://www.instagram.com/kaatvspaendonck/" class="contact-link"> 
+     <span class="pijltje">></span> 
+      <img class="icon instagram" src="images/ig2.jpg" alt="@kaatvspaendonck"> </a> 
+</div>.
+
+
+</body>
+
+
+
+
+
+</html>
+

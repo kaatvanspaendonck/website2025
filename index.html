@@ -1,0 +1,209 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+ <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title> index </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+
+<style>
+    @font-face {
+  font-family: 'sjans';
+  src: url(fonts/OpenSans_Condensed-Light.ttf) format('truetype');
+
+}
+
+    body {
+       background: none;
+  
+      font-family: sjans;
+    }
+
+.page{
+  background-image: url("images/achtergrond_web12345.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.menu{
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  height: 40px;
+  background: rgb(250, 246, 240);
+}
+
+
+.menu a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+
+  color: navy;
+  font-weight: 500;
+
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+.menu a:nth-child(2) {
+  flex: 2;
+  background: rgb(150, 150, 179);
+  color: whitesmoke;
+}
+
+.menu a:nth-child(1),
+.menu a:nth-child(3) {
+  flex: 1;
+}
+
+.menu a:hover{
+  color: rgb(82, 2, 33);
+}
+
+.menu a {
+  border-right: 1px solid rgba(0,0,0,0.1);
+}
+
+.menu a:last-child {
+  border-right: none;
+}
+
+.extra-menu {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+
+    background: rgb(33, 26, 68);
+    color: whitesmoke;
+    font-weight: 500;
+
+    padding: 12px 24px;
+}
+
+.extra-menu a:hover{
+  color: rgb(82, 2, 33);
+}
+
+.container_boven {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .afb1 {
+      height: 45vh;
+      width: auto;
+      object-fit: contain;
+      cursor: pointer;
+
+       width: 40vw;
+  height: 50vh;
+  object-fit: contain;
+  }
+
+#changeImageText {
+  display: block;
+  color: rgb(82, 2, 33);
+  font-family: 'sjans', sans-serif;
+  font-weight: 400;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+    /* Alleen echte mobiele apparaten */
+@media (max-width: 768px) {
+  body {
+    background-image: url("images/achtergrond_mobiel1234.png");
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+
+<div class="menu">
+  <a href="Writing.html"> writing </a>
+  <a href="www.eenbeetjenaief.nl"> www.eenbeetjenaief.nl </a>
+  <a href="Contact.html"> contact </a> 
+</div>
+
+<a href="installaties.html" class="extra-menu"> installaties </a>
+
+<div class="page">
+
+  <div class="container_boven">
+    <img id="randomImage" class="afb1" alt="Random afbeelding">
+
+ <span id="changeImageText"> > next > </span>
+  </div>
+
+
+<script>
+  const images = [
+    "images/afb4.jpg",
+    "images/afb8.jpg",
+    "images/afb22.jpg",
+    "images/afb23.jpeg",
+    "images/afb24.jpeg",
+    "images/afb2.jpg",
+    "images/afb5.jpg",
+    "images/kim1.jpg",
+    "images/kim2.jpg",
+    "images/krant1.jpeg",
+    "images/krant2.jpeg",
+    "images/afb3.jpg",
+    "images/afb6.jpg",
+    "images/afb7.jpg",
+    "images/afb11.jpg"
+  ];
+
+  const img = document.getElementById("randomImage");
+  const text = document.getElementById("changeImageText");
+
+  let currentIndex = 0;
+
+  // start direct met eerste image
+  img.src = images[currentIndex];
+
+  function showNextImage() {
+    currentIndex++;
+
+    if (currentIndex >= images.length) {
+      currentIndex = 0;
+    }
+
+    img.src = images[currentIndex];
+  }
+
+  // Mobiel: knop
+  if (text) {
+    text.addEventListener("click", showNextImage);
+  }
+</script>
+</body>
+</html>

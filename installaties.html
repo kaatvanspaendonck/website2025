@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+ <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title> installaties </title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+
+  <style>
+
+
+@font-face {
+  font-family: 'sjans';
+  src: url(fonts/OpenSans_Condensed-Light.ttf) format('truetype');
+
+}
+
+  body, html {
+    padding-top: 40px;
+  margin: 0;
+  font-family: sjans;
+  font-size: 16px;
+  line-height: 20px;
+
+}
+
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  background-image: url(images/achtergrond1.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% auto; 
+
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.menu{
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  height: 40px;
+  background: rgb(250, 246, 240);
+}
+
+
+.menu a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+
+  color: navy;
+  font-weight: 500;
+
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+.menu a:nth-child(2) {
+  flex: 2;
+  background: rgb(150, 150, 179);
+  color: whitesmoke;
+}
+
+.menu a:nth-child(1),
+.menu a:nth-child(3) {
+  flex: 1;
+}
+
+.menu a:hover{
+  color: rgb(82, 2, 33);
+}
+
+.menu a {
+  border-right: 1px solid rgba(0,0,0,0.1);
+}
+
+.menu a:last-child {
+  border-right: none;
+}
+
+.row {
+  display: flex;
+  gap: 40px;
+  margin: 60px 40px;
+  align-items: flex-start;
+}
+
+.text {
+  width: 30%;
+  font-family: sjans;
+}
+
+.images {
+  display: flex;
+  gap: 20px;
+  width: 70%;
+}
+
+.images img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  object-fit: cover;
+}
+
+
+
+@media (max-width: 768px) {
+
+  .menu { 
+    flex-direction: column; 
+    gap: 1em;
+    align-items: flex-end; 
+    margin-top: 5%; 
+    margin-right: 2%;
+  } 
+ 
+   .menu a {
+    display: block; 
+    font-size: 18px; 
+  }
+  }
+
+</style>
+
+<body>
+
+<div class="menu">
+
+  <a href="index.html"> photography </a>  
+  <a href="www.eenbeetjenaief.nl"> www.eenbeetjenaief.nl </a>
+  <a href="Contact.html"> contact </a> 
+
+</div>
+
+<div class="page">
+        <div class="row">
+        <div class="text">
+            <p> Process towards installation during the graduation show 
+                <br> @ Royal Academy of Art, The Hague, 2026
+                <br> & screenshots from corresponding website. </p>
+        </div>
+
+        <div class="images">
+            <img src="images/installaties/IMG_6764.HEIC">
+            <img src="images/installaties/ss1.png">
+            <img src="images/installaties/ss2.png">
+        </div>
+        </div>
+
+        <div class="row">
+        <div class="text">
+            <p> Installation @ The Grey Space in the Middle, The Hague, 2025,
+                <br> as part of Solstice Collective
+                <br> On getting lost at home & inner reflection </p>
+        </div>
+
+        <div class="images">
+            <img src="images/installaties/i-1.heic">
+            <img src="images/installaties/i-2.heic">
+            <img src="images/installaties/i-3.heic">
+            <img src="images/installaties/IMG_3871.jpg">
+        </div>
+        </div>
+
+        <div class="row">
+        <div class="text">
+            <p> Installation as part of Little Bugs Exhibition, Amsterdam, 2024 </p>
+        </div>
+
+        <div class="images">
+            <img src="images/installaties/i2.jpeg">
+        </div>
+        </div>
+
+</div>
+
+</body>
+
+</html>
+
