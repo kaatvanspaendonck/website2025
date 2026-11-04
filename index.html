@@ -14,16 +14,9 @@
 
 
 <style>
-    @font-face {
-  font-family: 'sjans';
-  src: url(fonts/OpenSans_Condensed-Light.ttf) format('truetype');
-
-}
 
     body {
        background: none;
-  
-      font-family: sjans;
     }
 
 .page{
@@ -56,7 +49,7 @@
 
   height: 100%;
 
-  color: navy;
+  color:coral;
   font-weight: 500;
 
   padding: 0 16px;
@@ -66,7 +59,7 @@
 .menu a:nth-child(2) {
   flex: 2;
   background: rgb(150, 150, 179);
-  color: whitesmoke;
+  color: greenyellow;
 }
 
 .menu a:nth-child(1),
@@ -75,7 +68,12 @@
 }
 
 .menu a:hover{
-  color: rgb(82, 2, 33);
+  color: mediumvioletred;
+}
+
+.menu a:nth-child(2):hover {
+  flex: 2;
+  color: yellowgreen;
 }
 
 .menu a {
@@ -86,7 +84,7 @@
   border-right: none;
 }
 
-.extra-menu {
+/* .extra-menu {
     position: fixed;
     right: 0;
     bottom: 0;
@@ -96,10 +94,10 @@
     font-weight: 500;
 
     padding: 12px 24px;
-}
+} */
 
 .extra-menu a:hover{
-  color: rgb(82, 2, 33);
+  color: greenyellow;
 }
 
 .container_boven {
@@ -124,7 +122,7 @@
 
 #changeImageText {
   display: block;
-  color: rgb(82, 2, 33);
+  color: greenyellow;
   font-family: 'sjans', sans-serif;
   font-weight: 400;
   cursor: pointer;
@@ -152,7 +150,7 @@
   <a href="Contact.html"> contact </a> 
 </div>
 
-<a href="installaties.html" class="extra-menu"> installations </a>
+<!-- <a href="installaties.html" class="extra-menu"> installations </a> -->
 
 <div class="page">
 
@@ -165,21 +163,27 @@
 
 <script>
   const images = [
-    "images/afb4.jpg",
-    "images/afb8.jpg",
-    "images/afb22.jpg",
-    "images/afb23.jpeg",
-    "images/afb24.jpeg",
-    "images/afb2.jpg",
-    "images/afb5.jpg",
-    "images/kim1.jpg",
-    "images/kim2.jpg",
-    "images/krant1.jpeg",
-    "images/krant2.jpeg",
-    "images/afb3.jpg",
-    "images/afb6.jpg",
-    "images/afb7.jpg",
-    "images/afb11.jpg"
+    "images/portfolio/afb4.jpg",
+    "images/portfolio/afb23.jpg",
+    "images/portfolio/afb22.jpg",
+     "images/portfolio/afb14.jpg",
+    "images/portfolio/afb24.jpg",
+    "images/portfolio/afb2.jpg",
+    "images/portfolio/afb0.jpg",
+    "images/portfolio/afb17.jpg",
+    "images/portfolio/kim1.jpg",
+    "images/portfolio/kim2.jpg",
+    "images/portfolio/krant1.jpeg",
+    "images/portfolio/krant2.jpeg",
+    "images/portfolio/afb8.jpg",
+    "images/portfolio/afb6.jpg",
+    "images/portfolio/afb11.jpg",
+    "images/portfolio/afb3.jpg",
+    "images/portfolio/afb13.jpg",
+    "images/portfolio/afb15.jpg",
+    "images/portfolio/afb5.jpg",
+    "images/portfolio/afb16.jpg",
+    "images/portfolio/afb7.jpg"
   ];
 
   const img = document.getElementById("randomImage");
